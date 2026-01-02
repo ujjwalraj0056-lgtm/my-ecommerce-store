@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Store - Your One-Stop Shop</title>
+    <title>Ransus - Premium Live Fish Food & Isopods</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
+            background: #f0f8ff;
         }
         
         /* Header */
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
-            padding: 1rem 0;
+            padding: 1.5rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
         
         .header-content {
@@ -33,37 +33,22 @@
         }
         
         .logo {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 700;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
         
-        .search-bar {
-            flex: 1;
-            max-width: 500px;
-            margin: 0 2rem;
-            position: relative;
-        }
-        
-        .search-bar input {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border: none;
-            border-radius: 25px;
-            font-size: 1rem;
-        }
-        
-        .header-actions {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
+        .logo-subtitle {
+            font-size: 0.8rem;
+            opacity: 0.9;
+            font-weight: 400;
         }
         
         .cart-btn {
             background: white;
-            color: #667eea;
+            color: #1e3c72;
             border: none;
             padding: 0.75rem 1.5rem;
             border-radius: 25px;
@@ -73,6 +58,7 @@
             align-items: center;
             gap: 0.5rem;
             transition: transform 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         
         .cart-btn:hover { transform: scale(1.05); }
@@ -83,11 +69,13 @@
             border-radius: 50%;
             padding: 0.2rem 0.5rem;
             font-size: 0.8rem;
+            min-width: 20px;
+            text-align: center;
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
             padding: 4rem 2rem;
             text-align: center;
@@ -96,11 +84,29 @@
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
         
         .hero p {
-            font-size: 1.2rem;
-            opacity: 0.9;
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
         }
         
         /* Categories */
@@ -115,54 +121,43 @@
             gap: 1rem;
             margin-bottom: 2rem;
             overflow-x: auto;
+            justify-content: center;
         }
         
         .category-tab {
             background: white;
-            border: 2px solid #e0e0e0;
-            padding: 0.75rem 1.5rem;
+            border: 2px solid #1e3c72;
+            color: #1e3c72;
+            padding: 0.75rem 2rem;
             border-radius: 25px;
             cursor: pointer;
             white-space: nowrap;
             transition: all 0.3s;
+            font-weight: 600;
         }
         
         .category-tab.active {
-            background: #667eea;
+            background: #1e3c72;
             color: white;
-            border-color: #667eea;
         }
         
-        /* Products Grid */
+        /* Products Section */
         .products-section {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
         }
         
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-        
         .section-title {
-            font-size: 2rem;
-            color: #333;
-        }
-        
-        .sort-dropdown {
-            padding: 0.5rem 1rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 1rem;
-            cursor: pointer;
+            font-size: 2.5rem;
+            color: #1e3c72;
+            margin-bottom: 2rem;
+            text-align: center;
         }
         
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
         }
         
@@ -170,21 +165,23 @@
             background: white;
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             transition: all 0.3s;
             cursor: pointer;
+            border: 2px solid transparent;
         }
         
         .product-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+            box-shadow: 0 12px 24px rgba(30,60,114,0.2);
+            border-color: #1e3c72;
         }
         
         .product-image {
             width: 100%;
-            height: 250px;
+            height: 280px;
             object-fit: cover;
-            position: relative;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
         
         .product-badge {
@@ -193,10 +190,11 @@
             right: 1rem;
             background: #ff4757;
             color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: 600;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
         
         .product-info {
@@ -205,87 +203,87 @@
         
         .product-category {
             display: inline-block;
-            background: #f0f0f0;
-            color: #666;
-            padding: 0.25rem 0.75rem;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 600;
+            background: #e3f2fd;
+            color: #1e3c72;
+            padding: 0.3rem 1rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 700;
             text-transform: uppercase;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
         }
         
         .product-name {
-            font-size: 1.25rem;
+            font-size: 1.4rem;
             margin: 0.5rem 0;
-            color: #333;
-            font-weight: 600;
+            color: #1e3c72;
+            font-weight: 700;
         }
         
-        .product-rating {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+        .product-description {
+            color: #666;
+            font-size: 0.95rem;
             margin: 0.5rem 0;
-            color: #ffa502;
+            line-height: 1.5;
+        }
+        
+        .product-stock {
+            color: #27ae60;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
         }
         
         .product-footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 2px solid #f0f0f0;
         }
         
         .product-price {
-            font-size: 1.5rem;
+            font-size: 2rem;
             font-weight: 700;
-            color: #667eea;
-        }
-        
-        .old-price {
-            text-decoration: line-through;
-            color: #999;
-            font-size: 1rem;
-            margin-left: 0.5rem;
+            color: #1e3c72;
         }
         
         .add-btn {
-            background: #667eea;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
             border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 600;
+            padding: 0.85rem 2rem;
+            border-radius: 25px;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(30,60,114,0.3);
         }
         
         .add-btn:hover {
-            background: #5568d3;
             transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(30,60,114,0.4);
         }
         
         /* Cart Sidebar */
         .cart-sidebar {
             position: fixed;
-            right: -400px;
+            right: -450px;
             top: 0;
-            width: 400px;
+            width: 450px;
             height: 100vh;
             background: white;
-            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+            box-shadow: -4px 0 20px rgba(0,0,0,0.15);
             transition: right 0.3s;
             z-index: 2000;
             overflow-y: auto;
         }
         
-        .cart-sidebar.open {
-            right: 0;
-        }
+        .cart-sidebar.open { right: 0; }
         
         .cart-header {
-            background: #667eea;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
             padding: 1.5rem;
             display: flex;
@@ -297,9 +295,18 @@
             background: none;
             border: none;
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.3s;
         }
+        
+        .close-cart:hover { background: rgba(255,255,255,0.2); }
         
         .cart-items {
             padding: 1rem;
@@ -308,15 +315,19 @@
         .cart-item {
             display: flex;
             gap: 1rem;
-            padding: 1rem;
-            border-bottom: 1px solid #eee;
+            padding: 1.5rem;
+            border: 2px solid #f0f0f0;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            background: #fafafa;
         }
         
         .cart-item-image {
-            width: 80px;
-            height: 80px;
+            width: 90px;
+            height: 90px;
             object-fit: cover;
             border-radius: 8px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
         
         .cart-item-details {
@@ -324,31 +335,48 @@
         }
         
         .cart-item-name {
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 0.5rem;
+            color: #1e3c72;
+            font-size: 1.1rem;
         }
         
         .cart-item-price {
-            color: #667eea;
+            color: #1e3c72;
             font-weight: 700;
+            font-size: 1.2rem;
         }
         
         .quantity-controls {
             display: flex;
-            gap: 0.5rem;
+            gap: 0.75rem;
             align-items: center;
-            margin-top: 0.5rem;
+            margin-top: 0.75rem;
         }
         
         .qty-btn {
-            background: #667eea;
+            background: #1e3c72;
             color: white;
             border: none;
-            width: 30px;
-            height: 30px;
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
             cursor: pointer;
             font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        
+        .qty-btn:hover {
+            background: #2a5298;
+            transform: scale(1.1);
+        }
+        
+        .quantity-controls span {
+            font-weight: 700;
+            font-size: 1.1rem;
+            min-width: 30px;
+            text-align: center;
         }
         
         .remove-btn {
@@ -356,35 +384,60 @@
             color: white;
             border: none;
             padding: 0.5rem 1rem;
-            border-radius: 6px;
+            border-radius: 20px;
             cursor: pointer;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             margin-top: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .remove-btn:hover {
+            background: #ff3838;
+            transform: scale(1.05);
         }
         
         .cart-summary {
             padding: 1.5rem;
-            border-top: 2px solid #eee;
+            border-top: 3px solid #1e3c72;
+            background: #f8f9fa;
+        }
+        
+        .cart-subtotal, .cart-shipping {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
         }
         
         .cart-total {
             display: flex;
             justify-content: space-between;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin: 1.5rem 0;
+            padding-top: 1rem;
+            border-top: 2px solid #ddd;
+            color: #1e3c72;
         }
         
         .checkout-btn {
             width: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
             color: white;
             border: none;
-            padding: 1rem;
-            border-radius: 8px;
-            font-size: 1.25rem;
+            padding: 1.2rem;
+            border-radius: 12px;
+            font-size: 1.3rem;
             font-weight: 700;
             cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(39,174,96,0.3);
+        }
+        
+        .checkout-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 16px rgba(39,174,96,0.4);
         }
         
         .empty-cart {
@@ -393,9 +446,46 @@
             color: #999;
         }
         
+        .empty-cart-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Info Section */
+        .info-section {
+            background: white;
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+        }
+        
+        .info-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .info-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 12px;
+            background: #f8f9fa;
+        }
+        
+        .info-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .info-card h3 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+        }
+        
         /* Footer */
         footer {
-            background: #2c3e50;
+            background: #1e3c72;
             color: white;
             padding: 3rem 2rem;
             margin-top: 4rem;
@@ -411,6 +501,7 @@
         
         .footer-section h3 {
             margin-bottom: 1rem;
+            font-size: 1.3rem;
         }
         
         .footer-section ul {
@@ -419,14 +510,121 @@
         
         .footer-section ul li {
             margin-bottom: 0.5rem;
-            opacity: 0.8;
+            opacity: 0.9;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        /* Payment Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 3000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal.open { display: flex; }
+        
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #1e3c72;
+        }
+        
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #1e3c72;
+        }
+        
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .payment-method {
+            border: 2px solid #e0e0e0;
+            padding: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .payment-method:hover, .payment-method.selected {
+            border-color: #1e3c72;
+            background: #e3f2fd;
+        }
+        
+        .place-order-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
         }
         
         @media (max-width: 768px) {
-            .search-bar { display: none; }
             .hero h1 { font-size: 2rem; }
             .cart-sidebar { width: 100%; right: -100%; }
-            .products-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+            .products-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+            .hero-features { flex-direction: column; gap: 1rem; }
         }
     </style>
 </head>
@@ -434,47 +632,67 @@
     <!-- Header -->
     <header>
         <div class="header-content">
-            <div class="logo">🛍️ Premium Store</div>
-            <div class="search-bar">
-                <input type="text" placeholder="Search products..." id="searchInput" onkeyup="searchProducts()">
+            <div>
+                <div class="logo">🐛 Ransus</div>
+                <div class="logo-subtitle">Premium Live Fish Food & Isopods</div>
             </div>
-            <div class="header-actions">
-                <button class="cart-btn" onclick="toggleCart()">
-                    🛒 Cart <span class="cart-badge" id="cart-count">0</span>
-                </button>
-            </div>
+            <button class="cart-btn" onclick="toggleCart()">
+                🛒 Cart <span class="cart-badge" id="cart-count">0</span>
+            </button>
         </div>
     </header>
 
     <!-- Hero Section -->
     <div class="hero">
-        <h1>Welcome to Premium Store</h1>
-        <p>Discover amazing products at unbeatable prices</p>
+        <h1>🐟 Premium Live Fish Food & Isopods</h1>
+        <p>High-quality live cultures for your aquatic pets. Healthy, fresh, and delivered with care.</p>
+        <div class="hero-features">
+            <div class="hero-feature">✅ Live Cultures</div>
+            <div class="hero-feature">🚚 Fast Delivery</div>
+            <div class="hero-feature">💯 Quality Guaranteed</div>
+            <div class="hero-feature">🔒 Secure Payment</div>
+        </div>
     </div>
 
     <!-- Categories -->
     <div class="categories">
         <div class="category-tabs">
             <div class="category-tab active" onclick="filterCategory('all')">All Products</div>
-            <div class="category-tab" onclick="filterCategory('Electronics')">Electronics</div>
-            <div class="category-tab" onclick="filterCategory('Fashion')">Fashion</div>
-            <div class="category-tab" onclick="filterCategory('Home')">Home & Living</div>
-            <div class="category-tab" onclick="filterCategory('Sports')">Sports</div>
+            <div class="category-tab" onclick="filterCategory('Isopods')">Isopods</div>
+            <div class="category-tab" onclick="filterCategory('Live Food')">Live Fish Food</div>
         </div>
     </div>
 
     <!-- Products Section -->
     <div class="products-section">
-        <div class="section-header">
-            <h2 class="section-title">Featured Products</h2>
-            <select class="sort-dropdown" onchange="sortProducts(this.value)">
-                <option value="default">Sort By</option>
-                <option value="price-low">Price: Low to High</option>
-                <option value="price-high">Price: High to Low</option>
-                <option value="name">Name: A to Z</option>
-            </select>
-        </div>
+        <h2 class="section-title">Our Products</h2>
         <div class="products-grid" id="products-grid"></div>
+    </div>
+
+    <!-- Info Section -->
+    <div class="info-section">
+        <div class="info-content">
+            <div class="info-card">
+                <div class="info-icon">📦</div>
+                <h3>Safe Packaging</h3>
+                <p>Special packaging to ensure live cultures arrive healthy</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">🚚</div>
+                <h3>Fast Shipping</h3>
+                <p>Quick delivery to keep your cultures fresh</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">💬</div>
+                <h3>Expert Support</h3>
+                <p>Get help with culturing and care tips</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">⭐</div>
+                <h3>Premium Quality</h3>
+                <p>Healthy, active cultures guaranteed</p>
+            </div>
+        </div>
     </div>
 
     <!-- Cart Sidebar -->
@@ -485,11 +703,87 @@
         </div>
         <div class="cart-items" id="cart-items"></div>
         <div class="cart-summary">
+            <div class="cart-subtotal">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal">₹0</span>
+            </div>
+            <div class="cart-shipping">
+                <span>Shipping:</span>
+                <span id="shipping-cost">₹80</span>
+            </div>
             <div class="cart-total">
                 <span>Total:</span>
                 <span id="cart-total">₹0</span>
             </div>
-            <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+            <button class="checkout-btn" onclick="openCheckout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkout-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Checkout</h2>
+                <button class="modal-close" onclick="closeCheckout()">✕</button>
+            </div>
+            
+            <form id="checkout-form">
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" id="customer-name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Email *</label>
+                    <input type="email" id="customer-email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Phone Number *</label>
+                    <input type="tel" id="customer-phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Delivery Address *</label>
+                    <textarea id="customer-address" rows="3" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Payment Method</label>
+                    <div class="payment-methods">
+                        <div class="payment-method selected" onclick="selectPayment('razorpay')">
+                            <div style="font-size: 2rem;">💳</div>
+                            <div>Razorpay</div>
+                            <small>UPI/Card/Net Banking</small>
+                        </div>
+                        <div class="payment-method" onclick="selectPayment('cod')">
+                            <div style="font-size: 2rem;">💵</div>
+                            <div>Cash on Delivery</div>
+                            <small>Pay when you receive</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="background: #e3f2fd; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                    <strong>Order Summary:</strong>
+                    <div style="margin-top: 0.5rem;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>Subtotal:</span>
+                            <span id="modal-subtotal">₹0</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>Shipping:</span>
+                            <span>₹80</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 1.2rem; margin-top: 0.5rem; padding-top: 0.5rem; border-top: 2px solid #1e3c72;">
+                            <span>Total:</span>
+                            <span id="modal-total">₹0</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="place-order-btn">Place Order</button>
+            </form>
         </div>
     </div>
 
@@ -497,47 +791,89 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>About Us</h3>
+                <h3>About Ransus</h3>
+                <p>Premium quality live fish food and isopods for aquarium enthusiasts. We ensure healthy, active cultures delivered fresh to your door.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
                 <ul>
-                    <li>Our Story</li>
-                    <li>Careers</li>
-                    <li>Press</li>
+                    <li>About Us</li>
+                    <li>Shipping Policy</li>
+                    <li>Return Policy</li>
+                    <li>Care Guides</li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Customer Service</h3>
+                <h3>Contact Us</h3>
                 <ul>
-                    <li>Contact Us</li>
-                    <li>Shipping Info</li>
-                    <li>Returns</li>
+                    <li>📧 info@ransus.com</li>
+                    <li>📱 WhatsApp Support</li>
+                    <li>📍 India</li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Follow Us</h3>
                 <ul>
-                    <li>Facebook</li>
                     <li>Instagram</li>
-                    <li>Twitter</li>
+                    <li>Facebook</li>
+                    <li>YouTube</li>
                 </ul>
             </div>
         </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ransus. All rights reserved. | Premium Live Fish Food & Isopods</p>
+        </div>
     </footer>
 
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script>
         const products = [
-            { id: 1, name: 'Wireless Headphones', price: 2999, oldPrice: 4999, category: 'Electronics', image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400', rating: 4.5, badge: '40% OFF' },
-            { id: 2, name: 'Smart Watch Pro', price: 4999, oldPrice: 7999, category: 'Electronics', image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400', rating: 4.8, badge: 'BESTSELLER' },
-            { id: 3, name: 'Premium Laptop Backpack', price: 1499, oldPrice: 2499, category: 'Fashion', image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400', rating: 4.3 },
-            { id: 4, name: 'Coffee Maker Deluxe', price: 3499, oldPrice: 5999, category: 'Home', image: 'https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=400', rating: 4.6 },
-            { id: 5, name: 'Running Shoes Elite', price: 2499, oldPrice: 3999, category: 'Sports', image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400', rating: 4.7, badge: 'NEW' },
-            { id: 6, name: 'Designer Sunglasses', price: 1299, oldPrice: 2499, category: 'Fashion', image: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400', rating: 4.4 },
-            { id: 7, name: 'Bluetooth Speaker', price: 1999, oldPrice: 3499, category: 'Electronics', image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400', rating: 4.5 },
-            { id: 8, name: 'Yoga Mat Premium', price: 899, oldPrice: 1499, category: 'Sports', image: 'https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=400', rating: 4.2 }
+            { 
+                id: 1, 
+                name: 'Dairy Cow Isopods', 
+                price: 1299, 
+                category: 'Isopods', 
+                image: 'https://images.unsplash.com/photo-1535083783855-76ae62b2914e?w=400',
+                description: 'Premium Dairy Cow Isopods - 10 healthy pieces',
+                stock: 'In Stock',
+                badge: 'POPULAR'
+            },
+            { 
+                id: 2, 
+                name: 'Mealworms', 
+                price: 199, 
+                category: 'Live Food', 
+                image: 'https://images.unsplash.com/photo-1535083783855-76ae62b2914e?w=400',
+                description: 'Live Mealworms - 50 grams, perfect for fish and reptiles',
+                stock: 'In Stock',
+                badge: 'BESTSELLER'
+            },
+            { 
+                id: 3, 
+                name: 'Microworm Culture', 
+                price: 159, 
+                category: 'Live Food', 
+                image: 'https://images.unsplash.com/photo-1520990269108-4f2d8e4c5f4e?w=400',
+                description: 'Active Microworm starter culture, ideal for fry',
+                stock: 'In Stock'
+            },
+            { 
+                id: 4, 
+                name: 'Moina Culture', 
+                price: 199, 
+                category: 'Live Food', 
+                image: 'https://images.unsplash.com/photo-1535083783855-76ae62b2914e?w=400',
+                description: 'Live Moina culture, excellent for small fish',
+                stock: 'In Stock',
+                badge: 'NEW'
+            }
         ];
 
         let cart = [];
         let currentCategory = 'all';
         let displayedProducts = [...products];
+        let selectedPaymentMethod = 'razorpay';
+        const SHIPPING_COST = 80;
 
         function renderProducts() {
             const grid = document.getElementById('products-grid');
@@ -550,14 +886,10 @@
                     <div class="product-info">
                         <span class="product-category">${p.category}</span>
                         <h3 class="product-name">${p.name}</h3>
-                        <div class="product-rating">
-                            ${'⭐'.repeat(Math.floor(p.rating))} ${p.rating}
-                        </div>
+                        <p class="product-description">${p.description}</p>
+                        <p class="product-stock">✅ ${p.stock}</p>
                         <div class="product-footer">
-                            <div>
-                                <span class="product-price">₹${p.price}</span>
-                                ${p.oldPrice ? `<span class="old-price">₹${p.oldPrice}</span>` : ''}
-                            </div>
+                            <span class="product-price">₹${p.price}</span>
                             <button class="add-btn" onclick="addToCart(${p.id})">Add to Cart</button>
                         </div>
                     </div>
@@ -576,7 +908,7 @@
             }
             
             updateCart();
-            showNotification('Added to cart!');
+            showNotification('✅ Added to cart!');
         }
 
         function removeFromCart(id) {
@@ -600,12 +932,17 @@
             const count = cart.reduce((sum, item) => sum + item.quantity, 0);
             document.getElementById('cart-count').textContent = count;
             
-            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const total = subtotal + (cart.length > 0 ? SHIPPING_COST : 0);
+            
+            document.getElementById('cart-subtotal').textContent = `₹${subtotal}`;
             document.getElementById('cart-total').textContent = `₹${total}`;
+            document.getElementById('modal-subtotal').textContent = `₹${subtotal}`;
+            document.getElementById('modal-total').textContent = `₹${total}`;
             
             const cartItems = document.getElementById('cart-items');
             if (cart.length === 0) {
-                cartItems.innerHTML = '<div class="empty-cart"><h3>Your cart is empty</h3><p>Add some products to get started!</p></div>';
+                cartItems.innerHTML = '<div class="empty-cart"><div class="empty-cart-icon">🛒</div><h3>Your cart is empty</h3><p>Add some products to get started!</p></div>';
             } else {
                 cartItems.innerHTML = cart.map(item => `
                     <div class="cart-item">
@@ -638,42 +975,79 @@
             event.target.classList.add('active');
         }
 
-        function sortProducts(sortBy) {
-            if (sortBy === 'price-low') {
-                displayedProducts.sort((a, b) => a.price - b.price);
-            } else if (sortBy === 'price-high') {
-                displayedProducts.sort((a, b) => b.price - a.price);
-            } else if (sortBy === 'name') {
-                displayedProducts.sort((a, b) => a.name.localeCompare(b.name));
-            }
-            renderProducts();
-        }
-
-        function searchProducts() {
-            const query = document.getElementById('searchInput').value.toLowerCase();
-            displayedProducts = products.filter(p => 
-                p.name.toLowerCase().includes(query) || 
-                p.category.toLowerCase().includes(query)
-            );
-            renderProducts();
-        }
-
-        function checkout() {
+        function openCheckout() {
             if (cart.length === 0) {
                 alert('Your cart is empty!');
                 return;
             }
-            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            alert(`Order Placed Successfully! 🎉\n\nTotal Amount: ₹${total}\n\nThank you for shopping with us!`);
-            cart = [];
-            updateCart();
-            toggleCart();
+            document.getElementById('checkout-modal').classList.add('open');
         }
+
+        function closeCheckout() {
+            document.getElementById('checkout-modal').classList.remove('open');
+        }
+
+        function selectPayment(method) {
+            selectedPaymentMethod = method;
+            document.querySelectorAll('.payment-method').forEach(pm => pm.classList.remove('selected'));
+            event.currentTarget.classList.add('selected');
+        }
+
+        document.getElementById('checkout-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('customer-name').value;
+            const email = document.getElementById('customer-email').value;
+            const phone = document.getElementById('customer-phone').value;
+            const address = document.getElementById('customer-address').value;
+            
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const total = subtotal + SHIPPING_COST;
+            
+            if (selectedPaymentMethod === 'razorpay') {
+                // Razorpay Integration
+                var options = {
+                    "key": "rzp_test_1DP5mmOlF5G5ag", // Test key - Replace with your actual key
+                    "amount": total * 100, // Amount in paise
+                    "currency": "INR",
+                    "name": "Ransus",
+                    "description": "Live Fish Food & Isopods",
+                    "image": "https://i.imgur.com/n5tjHFD.png",
+                    "handler": function (response) {
+                        alert(`Payment Successful! 🎉\n\nPayment ID: ${response.razorpay_payment_id}\n\nYour order has been placed!\nWe'll contact you at ${phone} for delivery confirmation.`);
+                        cart = [];
+                        updateCart();
+                        closeCheckout();
+                        toggleCart();
+                    },
+                    "prefill": {
+                        "name": name,
+                        "email": email,
+                        "contact": phone
+                    },
+                    "notes": {
+                        "address": address
+                    },
+                    "theme": {
+                        "color": "#1e3c72"
+                    }
+                };
+                var rzp = new Razorpay(options);
+                rzp.open();
+            } else {
+                // COD
+                alert(`Order Placed Successfully! 🎉\n\nPayment Method: Cash on Delivery\nTotal Amount: ₹${total}\n\nWe'll contact you at ${phone} for delivery confirmation.\n\nThank you for shopping with Ransus!`);
+                cart = [];
+                updateCart();
+                closeCheckout();
+                toggleCart();
+            }
+        });
 
         function showNotification(message) {
             const notification = document.createElement('div');
             notification.textContent = message;
-            notification.style.cssText = 'position: fixed; top: 100px; right: 20px; background: #4CAF50; color: white; padding: 1rem 2rem; border-radius: 8px; z-index: 3000; animation: slideIn 0.3s;';
+            notification.style.cssText = 'position: fixed; top: 100px; right: 20px; background: #27ae60; color: white; padding: 1rem 2rem; border-radius: 8px; z-index: 3000; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-weight: 600;';
             document.body.appendChild(notification);
             setTimeout(() => notification.remove(), 2000);
         }
